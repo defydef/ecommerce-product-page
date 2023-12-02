@@ -1,5 +1,7 @@
+import Navbar from "./ui/Navbar";
+
 function App() {
-  return <div>test</div>;
+  return <Navbar />;
 }
 
 export default App;
