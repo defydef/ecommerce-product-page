@@ -10,6 +10,13 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --orange: #ff7e1b;
+  --light-orange: #ffeee2;
+  --dark: #1d2026;
+  --grey: #69707d;
+  --light-grey: #b6bcc8;
+  --light-grey-2: #f6f8fd;
 }
 
 /* CSS Reset */
