@@ -1,3 +1,5 @@
+import LargeButton from "./LargeButton";
+
 function Product() {
   return (
     <section className="pb-8">
@@ -65,7 +67,7 @@ function Product() {
       </section>
 
       <section className="p-5 flex justify-center">
-        <button className="bg-[var(--orange)] flex gap-3 justify-center items-center text-white w-full rounded-[0.625rem] p-4 shadow-[0px_20px_50px_-20px_var(--orange)]">
+        <LargeButton additionalClass="shadow-[0px_20px_50px_-20px_var(--orange)]">
           <span>
             <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -76,7 +78,7 @@ function Product() {
             </svg>
           </span>
           <span className="font-bold text-base">Add to cart</span>
-        </button>
+        </LargeButton>
       </section>
     </section>
   );

@@ -1,6 +1,7 @@
 import Button from "./Button";
+import Cart from "./Cart";
 
-function Gallery() {
+function Gallery({ isShowCart }) {
   return (
     <div className="grid grid-rows-[8.125rem_2.5rem_8.125rem] grid-cols-1">
       <span className="max-h-[18.75rem] bg-yellow-200 overflow-hidden col-start-1 row-start-1 row-span-full z-0">
@@ -22,6 +23,7 @@ function Gallery() {
           additionalClass="mr-3"
         />
       </div>
+      {isShowCart && <Cart />}
     </div>
   );
 }

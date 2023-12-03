@@ -7,6 +7,7 @@ import MobileMenu from "./ui/MobileMenu";
 
 function App() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [showCart, setShowCart] = useState(false);
   return (
     <Main>
       {showMobileMenu && (
@@ -18,8 +19,10 @@ function App() {
       <Navbar
         onToggleMobileMenu={setShowMobileMenu}
         isShowMobileMenu={showMobileMenu}
+        onToggleCart={setShowCart}
+        isShowCart={showCart}
       />
-      <Gallery />
+      <Gallery isShowCart={showCart} />
       <Product />
     </Main>
   );
