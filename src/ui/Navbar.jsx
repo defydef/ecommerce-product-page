@@ -1,8 +1,9 @@
-function Navbar() {
+function Navbar({ onToggleMobileMenu, isShowMobileMenu }) {
   return (
     <nav className="flex justify-between p-6">
       <ul className="flex gap-4 items-center">
-        <li>
+        {/* Hamburger menu */}
+        <li onClick={() => onToggleMobileMenu(!isShowMobileMenu)}>
           <svg width="16" height="15" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M16 12v3H0v-3h16Zm0-6v3H0V6h16Zm0-6v3H0V0h16Z"
@@ -11,6 +12,7 @@ function Navbar() {
             />
           </svg>
         </li>
+        {/* Logo */}
         <li className="-mt-1">
           <svg width="138" height="20" xmlns="http://www.w3.org/2000/svg">
             <path

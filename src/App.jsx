@@ -9,8 +9,16 @@ function App() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   return (
     <Main>
-      <MobileMenu />
-      <Navbar />
+      {showMobileMenu && (
+        <MobileMenu
+          onToggleMobileMenu={setShowMobileMenu}
+          isShowMobileMenu={showMobileMenu}
+        />
+      )}
+      <Navbar
+        onToggleMobileMenu={setShowMobileMenu}
+        isShowMobileMenu={showMobileMenu}
+      />
       <Gallery />
       <Product />
     </Main>
