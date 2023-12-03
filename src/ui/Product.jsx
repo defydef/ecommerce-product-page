@@ -1,6 +1,6 @@
 function Product() {
   return (
-    <>
+    <section className="pb-8">
       <section className="flex flex-col p-5 gap-3">
         <h2 className="text-[var(--orange)] text-xs uppercase font-bold tracking-[0.11538rem]">
           Sneaker Company
@@ -78,7 +78,7 @@ function Product() {
           <span className="font-bold text-base">Add to cart</span>
         </button>
       </section>
-    </>
+    </section>
   );
 }
 
