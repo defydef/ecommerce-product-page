@@ -17,13 +17,14 @@ function App() {
           isShowMobileMenu={showMobileMenu}
         />
       )}
-      <Navbar
-        onToggleMobileMenu={setShowMobileMenu}
-        isShowMobileMenu={showMobileMenu}
-        onToggleCart={setShowCart}
-        isShowCart={showCart}
-      />
       <CartProvider>
+        <Navbar
+          onToggleMobileMenu={setShowMobileMenu}
+          isShowMobileMenu={showMobileMenu}
+          onToggleCart={setShowCart}
+          isShowCart={showCart}
+        />
+
         <Gallery isShowCart={showCart} />
         <Product />
       </CartProvider>
