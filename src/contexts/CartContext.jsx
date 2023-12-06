@@ -14,7 +14,11 @@ function CartProvider({ children }) {
           ...state,
           qty: state.qty + 1,
         };
-
+      case "qty/subtract":
+        return {
+          ...state,
+          qty: state.qty > 0 ? state.qty - 1 : 0,
+        };
       default:
         throw new Error("Undefined action");
     }
@@ -24,6 +28,10 @@ function CartProvider({ children }) {
     dispatch({ type: "qty/add" });
   }
 
+  function subtractCartQty() {
+    dispatch({ type: "qty/subtract" });
+  }
+
   const [{ qty }, dispatch] = useReducer(reducer, initialState);
   return (
     <CartContext.Provider
@@ -31,6 +39,7 @@ function CartProvider({ children }) {
         qty,
         dispatch,
         addCartQty,
+        subtractCartQty,
       }}
     >
       {children}

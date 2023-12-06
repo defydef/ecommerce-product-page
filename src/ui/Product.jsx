@@ -2,7 +2,7 @@ import LargeButton from "./LargeButton";
 import { useCart } from "../contexts/CartContext";
 
 function Product() {
-  const { qty, addCartQty } = useCart();
+  const { qty, addCartQty, subtractCartQty } = useCart();
   return (
     <section className="pb-8">
       <section className="flex flex-col p-5 gap-3">
@@ -34,7 +34,7 @@ function Product() {
 
       <section className="bg-[var(--light-grey-2)] flex justify-between items-center p-5 mx-5 rounded-[0.625rem]">
         {/* decreaseQty button */}
-        <button>
+        <button onClick={subtractCartQty}>
           <svg
             width="12"
             height="4"
