@@ -1,6 +1,8 @@
 import LargeButton from "./LargeButton";
+import { useCart } from "../contexts/CartContext";
 
 function Product() {
+  const { qty, addCartQty } = useCart();
   return (
     <section className="pb-8">
       <section className="flex flex-col p-5 gap-3">
@@ -31,6 +33,7 @@ function Product() {
       </section>
 
       <section className="bg-[var(--light-grey-2)] flex justify-between items-center p-5 mx-5 rounded-[0.625rem]">
+        {/* decreaseQty button */}
         <button>
           <svg
             width="12"
@@ -47,8 +50,9 @@ function Product() {
             <use fill="#FF7E1B" fillRule="nonzero" xlinkHref="#a" />
           </svg>
         </button>
-        <div className="text-[var(--dark)] font-bold">0</div>
-        <button>
+        <div className="text-[var(--dark)] font-bold">{qty}</div>
+        {/* increaseQty button */}
+        <button onClick={addCartQty}>
           <svg
             width="12"
             height="12"

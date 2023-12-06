@@ -4,6 +4,7 @@ import Navbar from "./ui/Navbar";
 import Product from "./ui/Product";
 import Main from "./ui/Main";
 import MobileMenu from "./ui/MobileMenu";
+import { CartProvider } from "./contexts/CartContext";
 
 function App() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -22,8 +23,10 @@ function App() {
         onToggleCart={setShowCart}
         isShowCart={showCart}
       />
-      <Gallery isShowCart={showCart} />
-      <Product />
+      <CartProvider>
+        <Gallery isShowCart={showCart} />
+        <Product />
+      </CartProvider>
     </Main>
   );
 }
