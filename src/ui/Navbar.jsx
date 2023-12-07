@@ -6,7 +6,7 @@ function Navbar({
   onToggleCart,
   isShowCart,
 }) {
-  const { qty, addCartQty, subtractCartQty } = useCart();
+  const { qty } = useCart();
   return (
     <nav className="flex justify-between p-6">
       <ul className="flex gap-4 items-center">

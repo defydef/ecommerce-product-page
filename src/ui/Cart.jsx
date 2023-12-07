@@ -1,6 +1,9 @@
+import { useCart } from "../contexts/CartContext";
 import LargeButton from "./LargeButton";
 
 function Cart() {
+  const { qty } = useCart();
+  const totalPrice = (125 * qty).toFixed(2);
   return (
     <div className="bg-white col-start-1 row-start-1 row-span-full m-2 h-fit z-20 rounded-[0.625rem] pt-6 pb-8 flex flex-col gap-7 text-[var(--dark)] shadow-[] shadow-[0px_20px_50px_-20px_var(--dark-2)]">
       <h1 className="px-6 font-bold">Cart</h1>
@@ -15,8 +18,8 @@ function Cart() {
             Fall Limited Edition Sneakers
           </p>
           <div className="flex gap-3">
-            <p className="text-[var(--grey)]">$125.00 x 3</p>
-            <p className="font-bold">$375.00</p>
+            <p className="text-[var(--grey)]">$125.00 x {qty}</p>
+            <p className="font-bold">${totalPrice}</p>
           </div>
         </div>
         <span>
