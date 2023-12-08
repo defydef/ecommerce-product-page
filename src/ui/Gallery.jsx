@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "./Button";
 import Cart from "./Cart";
+import { useCart } from "../contexts/CartContext";
 
 const imageArray = [
   "./images/image-product-1.jpg",
@@ -11,6 +12,7 @@ const imageArray = [
 
 function Gallery({ isShowCart }) {
   const [currImageIndex, setCurrImageIndex] = useState(0);
+  const { qty } = useCart();
   return (
     <div className="grid grid-rows-[8.125rem_2.5rem_8.125rem] grid-cols-1">
       <span className="max-h-[18.75rem] overflow-hidden col-start-1 row-start-1 row-span-full z-0">
