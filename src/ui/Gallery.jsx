@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "./Button";
 import Cart from "./Cart";
+import DesktopGallery from "./DesktopGallery";
 
 const imageArray = [
   "./images/image-product-1.jpg",
@@ -46,36 +47,12 @@ function Gallery({ isShowCart }) {
         {isShowCart && <Cart />}
       </div>
       {/* Gallery on Desktop */}
-      <div className="hidden sm:flex flex-col justify-start gap-6 pl-10">
-        <div>
-          <img
-            src={imageArray[currImageIndex]}
-            alt="product-1"
-            className="rounded-[0.9375rem] min-w-[27.8125rem]"
-          />
-        </div>
-        <div className="flex gap-4 justify-between">
-          {imageThumbnails.map((image, index) => (
-            <div
-              key={index}
-              onClick={() => setCurrImageIndex(index)}
-              className={` ${
-                index === currImageIndex
-                  ? "border bg-white opacity-75 w-[5.5rem] h-[5.5rem]"
-                  : ""
-              } border-[var(--orange)] rounded-[0.9375rem] overflow-hidden cursor-pointer`}
-            >
-              <img
-                src={image}
-                alt={`product-${index + 1}`}
-                className={`w-[5.8rem] grow ${
-                  index === currImageIndex ? "opacity-30" : ""
-                }`}
-              />
-            </div>
-          ))}
-        </div>
-      </div>
+      <DesktopGallery
+        imageThumbnails={imageThumbnails}
+        imageArray={imageArray}
+        onSetDisplayedImageIndex={setCurrImageIndex}
+        currImageIndex={currImageIndex}
+      />
     </>
   );
 }
