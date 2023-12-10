@@ -5,6 +5,8 @@ import Product from "./ui/Product";
 import Main from "./ui/Main";
 import MobileMenu from "./ui/MobileMenu";
 import { CartProvider } from "./contexts/CartContext";
+import ProductGallery from "./ui/ProductGallery";
+import HorizontalLine from "./ui/HorizontalLine";
 
 function App() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -24,8 +26,11 @@ function App() {
           onToggleCart={setShowCart}
           isShowCart={showCart}
         />
-        <Gallery isShowCart={showCart} />
-        <Product />
+        <HorizontalLine />
+        <ProductGallery>
+          <Gallery isShowCart={showCart} />
+          <Product />
+        </ProductGallery>
       </CartProvider>
     </Main>
   );
