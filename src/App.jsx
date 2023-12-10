@@ -24,7 +24,6 @@ function App() {
           onToggleCart={setShowCart}
           isShowCart={showCart}
         />
-
         <Gallery isShowCart={showCart} />
         <Product />
       </CartProvider>
