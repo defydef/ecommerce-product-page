@@ -4,15 +4,15 @@ import { useCart } from "../contexts/CartContext";
 function Product() {
   const { qty, addCartQty, subtractCartQty } = useCart();
   return (
-    <section className="pb-8 sm:px-36">
+    <section className="pb-8 sm:pl-32">
       <section className="flex flex-col p-5 gap-3">
-        <h2 className="text-[var(--orange)] text-xs uppercase font-bold tracking-[0.11538rem]">
+        <h2 className="text-[var(--orange)] text-xs uppercase font-bold tracking-[0.11538rem] ">
           Sneaker Company
         </h2>
-        <h1 className="text-[var(--dark)] text-[1.75rem] font-bold leading-8">
+        <h1 className="text-[var(--dark)] text-[1.75rem] font-bold leading-8 pr-40">
           Fall Limited Edition Sneakers
         </h1>
-        <p className="text-[var(--grey)] leading-[1.5625rem] text-[0.9375rem]">
+        <p className="text-[var(--grey)] leading-[1.5625rem] text-[0.9375rem] pr-10">
           These low-profile sneakers are your perfect casual wear companion.
           Featuring a durable rubber outer sole, they’ll withstand everything
           the weather can offer.
@@ -31,8 +31,8 @@ function Product() {
           </div>
         </div>
       </section>
-      <section className="sm:flex sm:w-full">
-        <section className="bg-[var(--light-grey-2)] flex justify-between items-center p-5 sm:py-0 sm:gap-10 mx-5 rounded-[0.625rem]">
+      <section className="sm:flex sm:p-5 sm:gap-2">
+        <section className="bg-[var(--light-grey-2)] flex justify-between items-center p-5 sm:py-0 sm:gap-2 rounded-[0.625rem] grow min-w-fit">
           {/* decreaseQty button */}
           <button onClick={subtractCartQty}>
             <span className="text-[var(--orange)] font-bold text-2xl">

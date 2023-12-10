@@ -1,6 +1,6 @@
 function ProductGallery({ children }) {
   return (
-    <section className="flex flex-col sm:flex-row justify-between sm:px-40">
+    <section className="flex flex-col sm:flex-row justify-between sm:items-center sm:px-40">
       {children}
     </section>
   );

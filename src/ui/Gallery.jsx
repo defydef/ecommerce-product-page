@@ -9,17 +9,21 @@ const imageArray = [
   "./images/image-product-4.jpg",
 ];
 
+const imageThumbnails = [
+  "./images/image-product-1-thumbnail.jpg",
+  "./images/image-product-2-thumbnail.jpg",
+  "./images/image-product-3-thumbnail.jpg",
+  "./images/image-product-4-thumbnail.jpg",
+];
+
 function Gallery({ isShowCart }) {
   const [currImageIndex, setCurrImageIndex] = useState(0);
   return (
     <>
-      <div className="grid grid-rows-[8.125rem_2.5rem_8.125rem] grid-cols-1">
+      {/* Gallery on Mobile */}
+      <div className="sm:hidden grid grid-rows-[8.125rem_2.5rem_8.125rem] grid-cols-1">
         <span className="max-h-[18.75rem] overflow-hidden col-start-1 row-start-1 row-span-full z-0">
-          <img
-            src={imageArray[currImageIndex]}
-            alt="product-1"
-            // className="clip-image"
-          />
+          <img src={imageArray[currImageIndex]} alt="product-1" />
         </span>
         <div className="col-start-1 row-start-2 row-span-1 z-10 flex justify-between">
           <Button
@@ -40,6 +44,26 @@ function Gallery({ isShowCart }) {
           />
         </div>
         {isShowCart && <Cart />}
+      </div>
+      {/* Gallery on Desktop */}
+      <div className="hidden sm:flex flex-col justify-start gap-6">
+        <div>
+          <img
+            src={imageArray[currImageIndex]}
+            alt="product-1"
+            className="rounded-[0.9375rem] min-w-[27.8125rem]"
+          />
+        </div>
+        <div className="flex gap-4">
+          {imageThumbnails.map((image, index) => (
+            <img
+              src={image}
+              alt={`product-${index + 1}`}
+              key={index}
+              className="rounded-[0.9375rem] w-[5.25rem] grow"
+            />
+          ))}
+        </div>
       </div>
     </>
   );
