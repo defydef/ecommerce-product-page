@@ -64,7 +64,7 @@ function Navbar({
           )}
         </li>
         {/* Avatar icon */}
-        <li>
+        <li className="border border-[var(--orange)] rounded-full cursor-pointer">
           <img
             src="./images/image-avatar.png"
             className="w-6"
