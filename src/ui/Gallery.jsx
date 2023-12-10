@@ -46,7 +46,7 @@ function Gallery({ isShowCart }) {
         {isShowCart && <Cart />}
       </div>
       {/* Gallery on Desktop */}
-      <div className="hidden sm:flex flex-col justify-start gap-6">
+      <div className="hidden sm:flex flex-col justify-start gap-6 pl-10">
         <div>
           <img
             src={imageArray[currImageIndex]}
@@ -54,14 +54,25 @@ function Gallery({ isShowCart }) {
             className="rounded-[0.9375rem] min-w-[27.8125rem]"
           />
         </div>
-        <div className="flex gap-4">
+        <div className="flex gap-4 justify-between">
           {imageThumbnails.map((image, index) => (
-            <img
-              src={image}
-              alt={`product-${index + 1}`}
+            <div
               key={index}
-              className="rounded-[0.9375rem] w-[5.25rem] grow"
-            />
+              onClick={() => setCurrImageIndex(index)}
+              className={` ${
+                index === currImageIndex
+                  ? "border bg-white opacity-75 w-[5.5rem] h-[5.5rem]"
+                  : ""
+              } border-[var(--orange)] rounded-[0.9375rem] overflow-hidden cursor-pointer`}
+            >
+              <img
+                src={image}
+                alt={`product-${index + 1}`}
+                className={`w-[5.8rem] grow ${
+                  index === currImageIndex ? "opacity-30" : ""
+                }`}
+              />
+            </div>
           ))}
         </div>
       </div>

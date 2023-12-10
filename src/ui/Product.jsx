@@ -9,10 +9,10 @@ function Product() {
         <h2 className="text-[var(--orange)] text-xs uppercase font-bold tracking-[0.11538rem] ">
           Sneaker Company
         </h2>
-        <h1 className="text-[var(--dark)] text-[1.75rem] font-bold leading-8 pr-40">
+        <h1 className="text-[var(--dark)] text-[1.75rem] font-bold leading-8 sm:pr-40">
           Fall Limited Edition Sneakers
         </h1>
-        <p className="text-[var(--grey)] leading-[1.5625rem] text-[0.9375rem] pr-10">
+        <p className="text-[var(--grey)] leading-[1.5625rem] text-[0.9375rem] sm:pr-10">
           These low-profile sneakers are your perfect casual wear companion.
           Featuring a durable rubber outer sole, they’ll withstand everything
           the weather can offer.
@@ -31,8 +31,8 @@ function Product() {
           </div>
         </div>
       </section>
-      <section className="sm:flex sm:p-5 sm:gap-2">
-        <section className="bg-[var(--light-grey-2)] flex justify-between items-center p-5 sm:py-0 sm:gap-2 rounded-[0.625rem] grow min-w-fit">
+      <section className="sm:flex sm:p-5 sm:gap-4">
+        <section className="bg-[var(--light-grey-2)] flex justify-between items-center p-5 sm:py-0 sm:gap-2 rounded-[0.625rem] sm:grow sm:min-w-fit mx-5 sm:mx-0">
           {/* decreaseQty button */}
           <button onClick={subtractCartQty}>
             <span className="text-[var(--orange)] font-bold text-2xl">
