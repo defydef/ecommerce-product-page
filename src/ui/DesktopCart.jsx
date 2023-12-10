@@ -1,11 +1,11 @@
 import { useCart } from "../contexts/CartContext";
 import LargeButton from "./LargeButton";
 
-function Cart() {
+function DesktopCart() {
   const { qty, clearCart } = useCart();
   const totalPrice = (125 * qty).toFixed(2);
   return (
-    <div className=" bg-white col-start-1 row-start-1 row-span-full m-2 h-fit z-20 rounded-[0.625rem] pt-6 pb-8 flex flex-col gap-7 text-[var(--dark)] shadow-[0px_20px_50px_-20px_var(--dark-2)]">
+    <div className="bg-white absolute right-40 h-64 w-[22.5rem] z-20 rounded-[0.625rem] pt-6 pb-8 flex flex-col gap-7 text-[var(--dark)] shadow-[0px_20px_50px_-20px_var(--dark-2)] ">
       <h1 className="px-6 font-bold">Cart</h1>
       <div className="w-full h-[1px] bg-[var(--horizontal-line)]"></div>
       {qty ? (
@@ -25,7 +25,7 @@ function Cart() {
               </div>
             </div>
             {/* Delete button */}
-            <span onClick={clearCart}>
+            <span onClick={clearCart} className="cursor-pointer">
               <svg
                 width="14"
                 height="16"
@@ -56,4 +56,4 @@ function Cart() {
   );
 }
 
-export default Cart;
+export default DesktopCart;
