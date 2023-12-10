@@ -34,13 +34,13 @@ Users should be able to:
 ### Screenshot
 
 Desktop
-![Desktop screenshot](./images/desktop-screenshot.png)
+![Desktop screenshot](./public/images/desktop-screenshot.png)
 
 Lightbox
-![Lightbox screenshot](./images/lightbox.png)
+![Lightbox screenshot](./public/images/lightbox.png)
 
 Mobile
-![Mobile screenshot](./images/mobile-screenshot.png)
+![Mobile screenshot](./public/images/mobile-screenshot.png)
 
 ### Links
 
